@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: ./framework-challenge-api/src
+    ports:
+      - "5001:5001"
+    container_name: framework-challenge.api
+    networks:
+      - framework-challenge
+
+  web:
+    build: ./framework-challenge-web
+    ports:
+      - "8080:80"
+    container_name: framework-challenge.web
+    depends_on:
+      - api
+    networks:
+      - framework-challenge
+
+networks:
+  framework-challenge:
+    driver: bridge
