@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Decomposicao {\n  /**\n   *\n   */\n  constructor() {\n    this.valor = 0;\n    this.divisores = new Array();\n    this.numerosPrimos = new Array();\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="columns is-centered">
+        <div class="column is-4-desktop is-12-mobile">
+            <nav class="panel" style="margin-top: 10rem;">
+                <p class="panel-heading">
+                    Decomposição
+                </p>
+                <div class="panel-block">
+                    <form [formGroup]="form" style="width: 100%;">
+                        <div class="field">
+                            <label class="label">Número</label>
+                            <div class="control">
+                                <input type="number" class="input" formControlName="valor">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Divisores</label>
+                            <div class="control">
+                                <input type="text" class="input" readonly formControlName="divisores">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Números primos</label>
+                            <div class="control">
+                                <input type="text" class="input" readonly formControlName="numerosPrimos">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="panel-block">
+                    <div class="buttons">
+                        <button class="button is-success" (click)="obterDecomposicao()">Decompor</button>
+                        <button class="button is-info" (click)="resetar();">Limpar</button>
+                    </div>
+
+                </div>
+                <div class="panel-block" *ngIf="error != ''">
+                    <article class="message is-danger">
+                        <div class="message-body">
+                            {{error}}
+                        </div>
+                    </article>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
